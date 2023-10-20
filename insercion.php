@@ -1,58 +1,22 @@
 <?php
-function insercion($array) {
-    $length = count($array);
-    for ($i = 1; $i < $length; $i++) {
-        $key = $array[$i];
+
+function insertionSort($arr) {
+    $n = count($arr);
+    for ($i = 1; $i < $n; $i++) {
+        $key = $arr[$i];
         $j = $i - 1;
-        while ($j >= 0 && $array[$j] > $key) {
-            $array[$j + 1] = $array[$j];
-            $j = $j - 1;
+        // Mueve los elementos mayores que $key una posición adelante
+        while ($j >= 0 && $arr[$j] > $key) {
+            $arr[$j + 1] = $arr[$j];
+            $j--;
         }
-        $array[$j + 1] = $key;
+        $arr[$j + 1] = $key;
     }
-    return $array;
+    return $arr;
 }
 
+$numbers = [64, 34, 25, 12, 22, 11, 90];
+$sorted = insertionSort($numbers);
+echo "Arreglo ordenado mediante el método de Inserción: " . implode(', ', $sorted);
 
-$array = [14, 21, 13, 5, 7, 25];
-$arrayOrdenado = insercion($array);
-echo "Arreglo ordenado: " . implode(", ", $arrayOrdenado);
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-afd 841 a
